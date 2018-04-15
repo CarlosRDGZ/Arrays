@@ -111,35 +111,6 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="btnAdd">
-            <property name="MemberName" />
-            <property name="WidthRequest">80</property>
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Agregar</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="BtnAddClick" />
-          </widget>
-          <packing>
-            <property name="X">308</property>
-            <property name="Y">142</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="btnInsert">
-            <property name="MemberName" />
-            <property name="WidthRequest">80</property>
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Insertar</property>
-            <property name="UseUnderline">True</property>
-          </widget>
-          <packing>
-            <property name="X">405</property>
-            <property name="Y">141</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.Label" id="lblCode">
             <property name="MemberName" />
             <property name="LabelProp" translatable="yes">Codigo</property>
@@ -157,6 +128,7 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Eliminar</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="BtnDeleteClick" />
           </widget>
           <packing>
             <property name="X">415</property>
@@ -171,6 +143,7 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Buscar</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="BtnSearchClick" />
           </widget>
           <packing>
             <property name="X">312</property>
@@ -178,7 +151,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="txtCodigo">
+          <widget class="Gtk.Entry" id="txtCode">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
@@ -217,6 +190,7 @@
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Listar</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="BtnListClick" />
           </widget>
           <packing>
             <property name="X">570</property>
@@ -233,7 +207,7 @@
             <property name="HeightRequest">270</property>
             <property name="ShadowType">In</property>
             <child>
-              <widget class="Gtk.TextView" id="textview4">
+              <widget class="Gtk.TextView" id="txtList">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
@@ -246,6 +220,59 @@
           <packing>
             <property name="X">560</property>
             <property name="Y">50</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnAdd">
+            <property name="MemberName" />
+            <property name="WidthRequest">80</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Agregar</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="BtnAddClick" />
+          </widget>
+          <packing>
+            <property name="X">311</property>
+            <property name="Y">121</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnInsert">
+            <property name="MemberName" />
+            <property name="WidthRequest">80</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Insertar</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="BtnInsertClick" />
+          </widget>
+          <packing>
+            <property name="X">310</property>
+            <property name="Y">171</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="lblPos">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Posicion</property>
+          </widget>
+          <packing>
+            <property name="X">399</property>
+            <property name="Y">182</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="txtPos">
+            <property name="MemberName" />
+            <property name="WidthRequest">70</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">460</property>
+            <property name="Y">173</property>
           </packing>
         </child>
       </widget>

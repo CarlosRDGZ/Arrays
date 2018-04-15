@@ -21,17 +21,13 @@ public partial class MainWindow
 
 	private global::Gtk.Entry txtName;
 
-	private global::Gtk.Button btnAdd;
-
-	private global::Gtk.Button btnInsert;
-
 	private global::Gtk.Label lblCode;
 
 	private global::Gtk.Button btnDelete;
 
 	private global::Gtk.Button btnSearch;
 
-	private global::Gtk.Entry txtCodigo;
+	private global::Gtk.Entry txtCode;
 
 	private global::Gtk.HSeparator hseparator2;
 
@@ -41,7 +37,15 @@ public partial class MainWindow
 
 	private global::Gtk.ScrolledWindow GtkScrolledWindow;
 
-	private global::Gtk.TextView textview4;
+	private global::Gtk.TextView txtList;
+
+	private global::Gtk.Button btnAdd;
+
+	private global::Gtk.Button btnInsert;
+
+	private global::Gtk.Label lblPos;
+
+	private global::Gtk.Entry txtPos;
 
 	protected virtual void Build()
 	{
@@ -133,35 +137,13 @@ public partial class MainWindow
 		w8.X = 119;
 		w8.Y = 25;
 		// Container child fixed4.Gtk.Fixed+FixedChild
-		this.btnAdd = new global::Gtk.Button();
-		this.btnAdd.WidthRequest = 80;
-		this.btnAdd.CanFocus = true;
-		this.btnAdd.Name = "btnAdd";
-		this.btnAdd.UseUnderline = true;
-		this.btnAdd.Label = global::Mono.Unix.Catalog.GetString("Agregar");
-		this.fixed4.Add(this.btnAdd);
-		global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnAdd]));
-		w9.X = 308;
-		w9.Y = 142;
-		// Container child fixed4.Gtk.Fixed+FixedChild
-		this.btnInsert = new global::Gtk.Button();
-		this.btnInsert.WidthRequest = 80;
-		this.btnInsert.CanFocus = true;
-		this.btnInsert.Name = "btnInsert";
-		this.btnInsert.UseUnderline = true;
-		this.btnInsert.Label = global::Mono.Unix.Catalog.GetString("Insertar");
-		this.fixed4.Add(this.btnInsert);
-		global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnInsert]));
-		w10.X = 405;
-		w10.Y = 141;
-		// Container child fixed4.Gtk.Fixed+FixedChild
 		this.lblCode = new global::Gtk.Label();
 		this.lblCode.Name = "lblCode";
 		this.lblCode.LabelProp = global::Mono.Unix.Catalog.GetString("Codigo");
 		this.fixed4.Add(this.lblCode);
-		global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.lblCode]));
-		w11.X = 49;
-		w11.Y = 259;
+		global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.lblCode]));
+		w9.X = 49;
+		w9.Y = 259;
 		// Container child fixed4.Gtk.Fixed+FixedChild
 		this.btnDelete = new global::Gtk.Button();
 		this.btnDelete.WidthRequest = 80;
@@ -170,9 +152,9 @@ public partial class MainWindow
 		this.btnDelete.UseUnderline = true;
 		this.btnDelete.Label = global::Mono.Unix.Catalog.GetString("Eliminar");
 		this.fixed4.Add(this.btnDelete);
-		global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnDelete]));
-		w12.X = 415;
-		w12.Y = 252;
+		global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnDelete]));
+		w10.X = 415;
+		w10.Y = 252;
 		// Container child fixed4.Gtk.Fixed+FixedChild
 		this.btnSearch = new global::Gtk.Button();
 		this.btnSearch.WidthRequest = 80;
@@ -181,35 +163,35 @@ public partial class MainWindow
 		this.btnSearch.UseUnderline = true;
 		this.btnSearch.Label = global::Mono.Unix.Catalog.GetString("Buscar");
 		this.fixed4.Add(this.btnSearch);
-		global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnSearch]));
-		w13.X = 312;
-		w13.Y = 252;
+		global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnSearch]));
+		w11.X = 312;
+		w11.Y = 252;
 		// Container child fixed4.Gtk.Fixed+FixedChild
-		this.txtCodigo = new global::Gtk.Entry();
-		this.txtCodigo.CanFocus = true;
-		this.txtCodigo.Name = "txtCodigo";
-		this.txtCodigo.IsEditable = true;
-		this.txtCodigo.InvisibleChar = '•';
-		this.fixed4.Add(this.txtCodigo);
-		global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.txtCodigo]));
-		w14.X = 115;
-		w14.Y = 249;
+		this.txtCode = new global::Gtk.Entry();
+		this.txtCode.CanFocus = true;
+		this.txtCode.Name = "txtCode";
+		this.txtCode.IsEditable = true;
+		this.txtCode.InvisibleChar = '•';
+		this.fixed4.Add(this.txtCode);
+		global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.txtCode]));
+		w12.X = 115;
+		w12.Y = 249;
 		// Container child fixed4.Gtk.Fixed+FixedChild
 		this.hseparator2 = new global::Gtk.HSeparator();
 		this.hseparator2.WidthRequest = 500;
 		this.hseparator2.Name = "hseparator2";
 		this.fixed4.Add(this.hseparator2);
-		global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.hseparator2]));
-		w15.X = 25;
-		w15.Y = 224;
+		global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.hseparator2]));
+		w13.X = 25;
+		w13.Y = 224;
 		// Container child fixed4.Gtk.Fixed+FixedChild
 		this.vseparator1 = new global::Gtk.VSeparator();
 		this.vseparator1.HeightRequest = 300;
 		this.vseparator1.Name = "vseparator1";
 		this.fixed4.Add(this.vseparator1);
-		global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.vseparator1]));
-		w16.X = 542;
-		w16.Y = 10;
+		global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.vseparator1]));
+		w14.X = 542;
+		w14.Y = 10;
 		// Container child fixed4.Gtk.Fixed+FixedChild
 		this.btnList = new global::Gtk.Button();
 		this.btnList.WidthRequest = 80;
@@ -218,9 +200,9 @@ public partial class MainWindow
 		this.btnList.UseUnderline = true;
 		this.btnList.Label = global::Mono.Unix.Catalog.GetString("Listar");
 		this.fixed4.Add(this.btnList);
-		global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnList]));
-		w17.X = 570;
-		w17.Y = 8;
+		global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnList]));
+		w15.X = 570;
+		w15.Y = 8;
 		// Container child fixed4.Gtk.Fixed+FixedChild
 		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
 		this.GtkScrolledWindow.WidthRequest = 400;
@@ -228,16 +210,57 @@ public partial class MainWindow
 		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-		this.textview4 = new global::Gtk.TextView();
-		this.textview4.CanFocus = true;
-		this.textview4.Name = "textview4";
-		this.textview4.Editable = false;
-		this.textview4.CursorVisible = false;
-		this.GtkScrolledWindow.Add(this.textview4);
+		this.txtList = new global::Gtk.TextView();
+		this.txtList.CanFocus = true;
+		this.txtList.Name = "txtList";
+		this.txtList.Editable = false;
+		this.txtList.CursorVisible = false;
+		this.GtkScrolledWindow.Add(this.txtList);
 		this.fixed4.Add(this.GtkScrolledWindow);
-		global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.GtkScrolledWindow]));
-		w19.X = 560;
-		w19.Y = 50;
+		global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.GtkScrolledWindow]));
+		w17.X = 560;
+		w17.Y = 50;
+		// Container child fixed4.Gtk.Fixed+FixedChild
+		this.btnAdd = new global::Gtk.Button();
+		this.btnAdd.WidthRequest = 80;
+		this.btnAdd.CanFocus = true;
+		this.btnAdd.Name = "btnAdd";
+		this.btnAdd.UseUnderline = true;
+		this.btnAdd.Label = global::Mono.Unix.Catalog.GetString("Agregar");
+		this.fixed4.Add(this.btnAdd);
+		global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnAdd]));
+		w18.X = 311;
+		w18.Y = 121;
+		// Container child fixed4.Gtk.Fixed+FixedChild
+		this.btnInsert = new global::Gtk.Button();
+		this.btnInsert.WidthRequest = 80;
+		this.btnInsert.CanFocus = true;
+		this.btnInsert.Name = "btnInsert";
+		this.btnInsert.UseUnderline = true;
+		this.btnInsert.Label = global::Mono.Unix.Catalog.GetString("Insertar");
+		this.fixed4.Add(this.btnInsert);
+		global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.btnInsert]));
+		w19.X = 310;
+		w19.Y = 171;
+		// Container child fixed4.Gtk.Fixed+FixedChild
+		this.lblPos = new global::Gtk.Label();
+		this.lblPos.Name = "lblPos";
+		this.lblPos.LabelProp = global::Mono.Unix.Catalog.GetString("Posicion");
+		this.fixed4.Add(this.lblPos);
+		global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.lblPos]));
+		w20.X = 399;
+		w20.Y = 182;
+		// Container child fixed4.Gtk.Fixed+FixedChild
+		this.txtPos = new global::Gtk.Entry();
+		this.txtPos.WidthRequest = 70;
+		this.txtPos.CanFocus = true;
+		this.txtPos.Name = "txtPos";
+		this.txtPos.IsEditable = true;
+		this.txtPos.InvisibleChar = '•';
+		this.fixed4.Add(this.txtPos);
+		global::Gtk.Fixed.FixedChild w21 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.txtPos]));
+		w21.X = 460;
+		w21.Y = 173;
 		this.Add(this.fixed4);
 		if ((this.Child != null))
 		{
@@ -247,6 +270,10 @@ public partial class MainWindow
 		this.DefaultHeight = 336;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
+		this.btnDelete.Clicked += new global::System.EventHandler(this.BtnDeleteClick);
+		this.btnSearch.Clicked += new global::System.EventHandler(this.BtnSearchClick);
+		this.btnList.Clicked += new global::System.EventHandler(this.BtnListClick);
 		this.btnAdd.Clicked += new global::System.EventHandler(this.BtnAddClick);
+		this.btnInsert.Clicked += new global::System.EventHandler(this.BtnInsertClick);
 	}
 }

@@ -1,11 +1,11 @@
 namespace EstrcuturasConArreglos
 {
-    class Catalog
+    class Inventory
     {
         private Product[] _catalog;
         private readonly int Length;
 
-        public Catalog(int numProducts)
+        public Inventory(int numProducts)
         {
             _catalog = new Product[numProducts];
             Length = numProducts;
@@ -36,7 +36,7 @@ namespace EstrcuturasConArreglos
                         break;
 
 			if (index == Length)
-				throw new System.IndexOutOfRangeException();
+				throw new System.Exception("Not Found");
 
             for(;index < Length - 1; index++)
                 _catalog[index] = _catalog[index + 1];
@@ -72,12 +72,12 @@ namespace EstrcuturasConArreglos
     }
 }
 
-/**
-private static int IndexOfNull(object[] array)
-{
-    for (int i = 0; i < array.Length / 2; i++)
-        if (array[i] == null)
-            return i;
-    return -1;
-}
- */
+/*
+* private static int IndexOfNull(object[] array)
+* {
+*     for (int i = 0; i < array.Length / 2; i++)
+*         if (array[i] == null)
+*             return i;
+*     return -1;
+* }
+*/
