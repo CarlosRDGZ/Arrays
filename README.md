@@ -3,5 +3,8 @@ Utilizando como estructura de datos un vector de 15 , desarrollar una aplicació
 Entregar en github y en clases el día 17 o 18 de abril según aplique.
 Considerar la interfaz simple, como la imagen adjunta.
 
+- Clase del Producto: [Product](EstrcuturasConArreglos/Product.cs)
+- Clase del Inventario: [Inventory](EstrcuturasConArreglos/Inventory.cs)
+
 #### Interfaz
 ![intefaz](interfaz.png)
