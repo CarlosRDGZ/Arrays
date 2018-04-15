@@ -4,138 +4,138 @@ using Gtk;
 
 public partial class MainWindow : Gtk.Window
 {
-	Inventory _catalog = new Inventory(15);
+    Inventory _catalog = new Inventory(15);
 
-	public MainWindow() : base(Gtk.WindowType.Toplevel) => Build();
+    public MainWindow() : base(Gtk.WindowType.Toplevel) => Build();
 
-	protected void OnDeleteEvent(object sender, DeleteEventArgs a)
+    protected void OnDeleteEvent(object sender, DeleteEventArgs a)
     {
         Application.Quit();
         a.RetVal = true;
     }
 
-	protected void BtnAddClick(object sender, EventArgs e)
-	{
-		if (IsValid(out Product product))
-		{
-			_catalog.Add(product);
-			MessageDialog msgOk = new MessageDialog(
+    protected void BtnAddClick(object sender, EventArgs e)
+    {
+        if (IsValid(out Product product))
+        {
+            _catalog.Add(product);
+            MessageDialog msgOk = new MessageDialog(
                 this,
                 DialogFlags.Modal,
-				MessageType.Info,
-				ButtonsType.Ok,
+                MessageType.Info,
+                ButtonsType.Ok,
                 "Producto Agregado"
             );
             msgOk.Run();
-			msgOk.Destroy();
-			ClearProductTxts();
+            msgOk.Destroy();
+            ClearProductTxts();
         }
-	}
+    }
 
-	protected void BtnListClick(object sender, EventArgs e)
-	{
-		txtList.Buffer.Text = _catalog.List();
-	}
+    protected void BtnListClick(object sender, EventArgs e)
+    {
+        txtList.Buffer.Text = _catalog.List();
+    }
 
-	protected void BtnInsertClick(object sender, EventArgs e)
-	{
-		if (IsValid(out Product product))
+    protected void BtnInsertClick(object sender, EventArgs e)
+    {
+        if (IsValid(out Product product))
         {
-			MessageDialog msg = null;
-			try
-			{
-				_catalog.Insert(product, int.Parse(txtPos.Text));
-				msg = new MessageDialog(
+            MessageDialog msg = null;
+            try
+            {
+                _catalog.Insert(product, int.Parse(txtPos.Text));
+                msg = new MessageDialog(
                     this,
                     DialogFlags.Modal,
-					MessageType.Info,
+                    MessageType.Info,
                     ButtonsType.Ok,
-					"Producto Insertado en {0}",
-				    txtPos.Text
+                    "Producto Insertado en {0}",
+                    txtPos.Text
                 );
-				ClearProductTxts();
+                ClearProductTxts();
             }
-			catch (Exception ex)
-			{
-				string error = "ERROR!";
-				if (ex is IndexOutOfRangeException)
-					error += " Posicion Invalida.";
-				msg = new MessageDialog(
+            catch (Exception ex)
+            {
+                string error = "ERROR!";
+                if (ex is IndexOutOfRangeException)
+                    error += " Posicion Invalida.";
+                msg = new MessageDialog(
                     this,
                     DialogFlags.Modal,
                     MessageType.Error,
                     ButtonsType.Close,
-					"{0}{1}{2}",
+                    "{0}{1}{2}",
                     error,
                     Environment.NewLine,
-					ex.Message
+                    ex.Message
                 );
             }
-			finally
-			{
-				msg.Run();
+            finally
+            {
+                msg.Run();
                 msg.Destroy();
-			}
+            }
         }
-	}
+    }
 
-	protected void BtnSearchClick(object sender, EventArgs e)
-	{
-		Product product = _catalog.Search(txtCode.Text);
-		if (product != null)
-			txtList.Buffer.Text = product.ToString();
-		else
-		{
-			MessageDialog msgError = new MessageDialog(
-				this,
-				DialogFlags.Modal,
-				MessageType.Error,
-				ButtonsType.Close,
-				"Producto No Econtrado"
-			);
-			msgError.Run();
-			msgError.Destroy();
-			txtCode.Text = "";
-		}
-	}
+    protected void BtnSearchClick(object sender, EventArgs e)
+    {
+        Product product = _catalog.Search(txtCode.Text);
+        if (product != null)
+            txtList.Buffer.Text = product.ToString();
+        else
+        {
+            MessageDialog msgError = new MessageDialog(
+                this,
+                DialogFlags.Modal,
+                MessageType.Error,
+                ButtonsType.Close,
+                "Producto No Econtrado"
+            );
+            msgError.Run();
+            msgError.Destroy();
+            txtCode.Text = "";
+        }
+    }
 
-	protected void BtnDeleteClick(object sender, EventArgs e)
-	{
-		MessageDialog msg = null;
+    protected void BtnDeleteClick(object sender, EventArgs e)
+    {
+        MessageDialog msg = null;
         try
-		{
-			_catalog.Delete(txtCode.Text);
-			msg = new MessageDialog(
+        {
+            _catalog.Delete(txtCode.Text);
+            msg = new MessageDialog(
                 this,
                 DialogFlags.Modal,
                 MessageType.Info,
                 ButtonsType.Ok,
                 "Producto {0} Borrado",
-				txtCode.Text
+                txtCode.Text
             );
-			txtCode.Text = "";
-			txtList.Buffer.Text = "";
-		}
-		catch (Exception ex)
-		{
-			msg = new MessageDialog(
+            txtCode.Text = "";
+            txtList.Buffer.Text = "";
+        }
+        catch (Exception ex)
+        {
+            msg = new MessageDialog(
                 this,
                 DialogFlags.Modal,
                 MessageType.Error,
                 ButtonsType.Close,
-				"Producto No Borrado{0}{1}",
+                "Producto No Borrado{0}{1}",
                 Environment.NewLine,
                 ex.Message
             );
-		}
-		finally
-		{
-			msg.Run();
+        }
+        finally
+        {
+            msg.Run();
             msg.Destroy();
-		}
-	}
+        }
+    }
 
-	private bool IsValid(out Product product)
+    private bool IsValid(out Product product)
     {
         string[] props =
         {
@@ -190,10 +190,10 @@ public partial class MainWindow : Gtk.Window
     }
 
     private void ClearProductTxts()
-	{
-		txtName.Text = "";
-		txtDescription.Text = "";
-		txtQuantity.Text = "";
-		txtPrice.Text = "";
-	}
+    {
+        txtName.Text = "";
+        txtDescription.Text = "";
+        txtQuantity.Text = "";
+        txtPrice.Text = "";
+    }
 }
