@@ -4,4 +4,4 @@ Entregar en github y en clases el día 17 o 18 de abril según aplique.
 Considerar la interfaz simple, como la imagen adjunta.
 
 #### Interfaz
-![intefaz] (interfaz.png)
+![intefaz](interfaz.png)
