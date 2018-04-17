@@ -37,10 +37,11 @@ namespace EstrcuturasConArreglos
 
 			if (index == Length)
 				throw new System.Exception("Not Found");
-
-            for(;index < Length - 1; index++)
+            
+            int last = Length - 1;
+            for(;index < last; index++)
                 _catalog[index] = _catalog[index + 1];
-            _catalog[Length - 1] = null;
+            _catalog[last] = null;
         }
 
         public void Insert(Product product, int pos)
