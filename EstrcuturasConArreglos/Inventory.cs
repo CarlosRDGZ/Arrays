@@ -11,9 +11,9 @@ namespace EstrcuturasConArreglos
             Length = numProducts;
         }
 
-        public void Add(Product product)
+		public void Add(Product product)
         {
-            for (int i = Length - 1; i > 0; i--)
+            for (int i = Length - 1; i > 0 + 1; i--)
                 _catalog[i] = _catalog[i - 1];
             _catalog[0] = product;
         }
@@ -47,12 +47,6 @@ namespace EstrcuturasConArreglos
         {
 			if (pos < 0 || pos >= Length)
 				throw new System.IndexOutOfRangeException();
-            
-            for (int i = Length - 1; i > pos + 1; i--){
-                _catalog[i] = _catalog[i - 1];
-                System.Console.WriteLine(i);
-                System.Console.WriteLine(_catalog[i]);
-            }
             _catalog[pos] = product;
         }
 

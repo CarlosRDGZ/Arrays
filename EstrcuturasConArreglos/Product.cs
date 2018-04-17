@@ -3,16 +3,21 @@ namespace EstrcuturasConArreglos
 {
     class Product
     {
-        private static Random _random = new Random(DateTime.Now.Millisecond);
-        public string Code { get; }
+		private static readonly Random _random = new Random(DateTime.Now.Millisecond);
+
+		public readonly string Code;
+
         public string Name { get; set; }
+
         public string Description { get; set; }
+
         private int _quantity;
         public int Quantity
         {
             get { return _quantity; }
             set { if (value >= 0) _quantity = value; }
         }
+
         private int _price;
         public int Price
         {
@@ -48,14 +53,3 @@ namespace EstrcuturasConArreglos
         }
     }
 }
-
-/*
-* public Product(string code, string name, string description, int quantity, int price
-* {
-*   Code = code;
-*   Name = name;
-*   Description = description;
-*   Quantity = quantity;
-*   Price = price;
-* }
-*/
